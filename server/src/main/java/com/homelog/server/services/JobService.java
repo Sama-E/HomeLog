@@ -29,7 +29,6 @@ public class JobService implements IJobService{
 	@Override
 	public Job updateJob(Job job, Long id) {
 		return jobRepository.findById(id).map(st -> {
-			st.setContractor(job.getContractor());
 			st.setTitle(job.getTitle());
 			st.setType(job.getType());
 			st.setCategory(job.getCategory());

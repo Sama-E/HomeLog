@@ -20,12 +20,6 @@ public class Job {
 	private Long id;
 	@NotNull
 	@Size(min = 5, max = 200)
-	private String homeowner;
-	@NotNull
-	@Size(min = 5, max = 200)
-	private String contractor;
-	@NotNull
-	@Size(min = 5, max = 200)
 	private String title;
 	@NotNull
 	@Size(min = 5, max = 200)
@@ -39,5 +33,7 @@ public class Job {
 	@NotNull
 	@Size(min = 5, max = 200)
 	private String description;
+	private String homeowner;
+	private String contractor;
 
 }

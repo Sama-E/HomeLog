@@ -1,5 +1,3 @@
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "/node_modules/bootstrap/dist/js/bootstrap.min.js";
 import './App.css';
 import {
   createBrowserRouter,
@@ -8,13 +6,20 @@ import {
   Outlet,
 } from "react-router-dom";
 
-import Home from './pages/Home/Home';
+import Home from './pages/Home';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import JobView from './components/Jobs/JobView';
+import JobAdd from './components/Jobs/JobAdd';
+import JobEdit from './components/Jobs/JobEdit';
+import JobProfile from './components/Jobs/JobProfile';
 
 const Layout = () => {
   return (
     <>
-
+      <Navbar />
       <Outlet />
+      <Footer />
     </>
   );
 };
@@ -28,6 +33,22 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
+      {
+        path: "/view-jobs",
+        element: <JobView />,
+      },
+      {
+        path: "/add-Jobs",
+        element: <JobAdd />,
+      },
+      {
+        path: "/edit-job/:id",
+        element: <JobEdit />,
+      },
+      {
+        path: "/job-profile/:id",
+        element: <JobProfile />,
+      },
     ],
   },
 ]);
@@ -35,11 +56,11 @@ const router = createBrowserRouter([
 function App() {
 
   return (
-    <div className="app">
-      <div className="container">
+    <>
+      
         <RouterProvider router={router} />
-      </div>
-    </div>
+      
+    </>
   )
 }
 
