@@ -35,7 +35,7 @@ const JobView = () => {
 
 	const handleDelete = async (id) => {
 		await axios.delete(
-			`http://localhost:8082/students/delete/${id}`
+			`http://localhost:8082/jobs/delete/${id}`
 		);
 		loadJobs();
 	};
